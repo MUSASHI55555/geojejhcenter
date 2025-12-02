@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://geojejh.or.kr/sitemap.xml
