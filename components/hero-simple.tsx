@@ -7,7 +7,7 @@ import Image from "next/image"
 
 function TypingHeadline() {
   const line1 = "꿈과 의미 있는 삶이 있어"
-  const line2 = "즐거운 우리 거제 자활"
+  const line2 = "거제지역자활센터"
   const pastel = "#5CB6FF"
 
   const [d1, setD1] = useState("")
@@ -237,7 +237,7 @@ function TypingHeadline() {
     )
   }
 
-  // ----- line2 구성 (즐거운 우리 거제 자활) -----
+  // ----- line2 구성 (거제지역자활센터) -----
   let line2Node: React.ReactNode
 
   if (!fullyTyped) {
@@ -250,45 +250,49 @@ function TypingHeadline() {
   } else {
     line2Node = (
       <>
-        즐거운 우리{" "}
         <span className="inline-flex whitespace-nowrap">
-          <span style={keywordStyle(resized)}>거제&nbsp;</span>
-          <span className="relative inline-block" style={keywordStyle(resized)}>
-            자활
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              style={{
-                position: "absolute",
-                left: "50%", // 자활 가운데 기준
-                top: "-0.6em", // 자활 바로 위
-                transform: showHeart
-                  ? "translate(-50%, 0) scale(1)"
-                  : "translate(-50%, 22px) scale(0.8)", // 아래+작게에서 시작
-                width: 30,
-                height: 30,
-                opacity: showHeart ? 1 : 0, // 🔹 여기만 토글
-                transition:
-                  "opacity 420ms ease-out, transform 420ms cubic-bezier(0.16, 1, 0.3, 1)",
-                pointerEvents: "none",
-              }}
-            >
-              <path
-                d="
-                  M12 21
-                  C12 21, 4 15.5, 3 10.5
-                  C2.5 8, 3.8 6, 5.8 5.4
-                  C7.5 4.9, 9.4 5.6, 10.5 7.2
-                  L12 9.2
-                  L13.5 7.2
-                  C14.6 5.6,16.5 4.9,18.2 5.4
-                  C20.2 6,21.5 8,21 10.5
-                  C20 15.5,12 21,12 21
-                  Z
-                "
-                fill={pastel}
-              />
-            </svg>
+          <span style={keywordStyle(resized)}>거제지역&nbsp;</span>
+
+          <span className="inline-flex whitespace-nowrap">
+            <span className="relative inline-block" style={keywordStyle(resized)}>
+              자활
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                style={{
+                  position: "absolute",
+                  left: "50%", // 자활 가운데 기준
+                  top: "-0.6em", // 자활 바로 위
+                  transform: showHeart
+                    ? "translate(-50%, 0) scale(1)"
+                    : "translate(-50%, 22px) scale(0.8)", // 아래+작게에서 시작
+                  width: 30,
+                  height: 30,
+                  opacity: showHeart ? 1 : 0,
+                  transition:
+                    "opacity 420ms ease-out, transform 420ms cubic-bezier(0.16, 1, 0.3, 1)",
+                  pointerEvents: "none",
+                }}
+              >
+                <path
+                  d="
+                    M12 21
+                    C12 21, 4 15.5, 3 10.5
+                    C2.5 8, 3.8 6, 5.8 5.4
+                    C7.5 4.9, 9.4 5.6, 10.5 7.2
+                    L12 9.2
+                    L13.5 7.2
+                    C14.6 5.6,16.5 4.9,18.2 5.4
+                    C20.2 6,21.5 8,21 10.5
+                    C20 15.5,12 21,12 21
+                    Z
+                  "
+                  fill={pastel}
+                />
+              </svg>
+            </span>
+
+            <span style={keywordStyle(resized)}>센터</span>
           </span>
         </span>
       </>
