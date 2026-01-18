@@ -253,24 +253,21 @@ function TypingHeadline() {
         즐거운 우리{" "}
         <span className="inline-flex whitespace-nowrap">
           <span style={keywordStyle(resized)}>거제&nbsp;</span>
-          <span
-            className="relative inline-block"
-            style={keywordStyle(resized)}
-          >
+          <span className="relative inline-block" style={keywordStyle(resized)}>
             자활
             <svg
               aria-hidden="true"
               viewBox="0 0 24 24"
               style={{
                 position: "absolute",
-                left: "50%",           // 자활 가운데 기준
-                top: "-0.6em",         // 자활 바로 위
+                left: "50%", // 자활 가운데 기준
+                top: "-0.6em", // 자활 바로 위
                 transform: showHeart
                   ? "translate(-50%, 0) scale(1)"
                   : "translate(-50%, 22px) scale(0.8)", // 아래+작게에서 시작
                 width: 30,
                 height: 30,
-                opacity: showHeart ? 1 : 0,              // 🔹 여기만 토글
+                opacity: showHeart ? 1 : 0, // 🔹 여기만 토글
                 transition:
                   "opacity 420ms ease-out, transform 420ms cubic-bezier(0.16, 1, 0.3, 1)",
                 pointerEvents: "none",
@@ -299,15 +296,19 @@ function TypingHeadline() {
   }
 
   return (
-    <div
-      aria-live="polite"
-      className="flex flex-col items-center text-center gap-2"
-    >
+    <div aria-live="polite" className="flex flex-col items-center text-center gap-2">
       <p className="font-semibold" style={line1Style}>
-        {line1Node}
+        {/* SEO/크롤러용: 서버 HTML에 텍스트를 남김 */}
+        <span className="sr-only">{line1}</span>
+        {/* 화면용(타이핑/장식): 시각적으로만 노출 */}
+        <span aria-hidden="true">{line1Node}</span>
       </p>
+
       <h1 className="font-bold" style={line2Style}>
-        {line2Node}
+        {/* SEO/크롤러용: 서버 HTML에 H1 텍스트를 남김 */}
+        <span className="sr-only">{line2}</span>
+        {/* 화면용(타이핑/장식): 시각적으로만 노출 */}
+        <span aria-hidden="true">{line2Node}</span>
       </h1>
     </div>
   )
