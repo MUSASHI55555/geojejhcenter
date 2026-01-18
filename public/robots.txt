@@ -1,4 +1,10 @@
 User-agent: *
-Disallow:
+Disallow: /login
+Disallow: /notice/new
+Disallow: /notice/edit
+Disallow: /gallery/new
+Disallow: /gallery/edit
+Disallow: /notice/view
+Disallow: /gallery/view
 
-Sitemap: https://geojejh.or.kr/sitemap.xml
+Sitemap: https://www.geojejh.or.kr/sitemap.xml
