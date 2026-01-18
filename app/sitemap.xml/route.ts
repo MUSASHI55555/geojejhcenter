@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 
 export const dynamic = "force-static"
 
-const BASE_URL = "https://geojejh.or.kr"
+const BASE_URL = "https://www.geojejh.or.kr"
 
 const paths = [
   "/",
