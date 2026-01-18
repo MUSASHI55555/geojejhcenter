@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation"
+import { permanentRedirect } from "next/navigation"
 
 export const metadata = {
   title: "기관소개 - 거제지역자활센터",
@@ -6,5 +6,5 @@ export const metadata = {
 }
 
 export default function IntroIndexPage() {
-  redirect("/intro/greeting")
+  permanentRedirect("/intro/greeting")
 }
