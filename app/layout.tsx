@@ -4,19 +4,19 @@ import "./globals.css"
 import { BackToTopButton } from "@/components/back-to-top-button"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://geojejh.or.kr"),
+  metadataBase: new URL("https://www.geojejh.or.kr"),
   title: "거제지역자활센터",
   description: "거제지역자활센터 - 꿈과 의미 있는 삶이 있어 즐거운 우리 거제 자활",
   openGraph: {
     title: "거제지역자활센터",
     description: "거제지역자활센터 - 꿈과 의미 있는 삶이 있어 즐거운 우리 거제 자활",
-    url: "https://geojejh.or.kr",
+    url: "https://www.geojejh.or.kr",
     siteName: "거제지역자활센터",
     locale: "ko_KR",
     type: "website",
   },
   alternates: {
-    canonical: "https://geojejh.or.kr",
+    canonical: "https://www.geojejh.or.kr",
   },
     generator: 'v0.app'
 }
