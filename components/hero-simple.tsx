@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 
 function TypingHeadline() {
-  const line1 = "꿈과 의미 있는 삶,"
+  const line1 = "꿈과 의미 있는 삶이 있어 즐거운"
   const line2 = "거제지역 자활센터"
   const pastel = "#5CB6FF"
 
