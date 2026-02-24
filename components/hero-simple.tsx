@@ -6,8 +6,8 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 
 function TypingHeadline() {
-  const line1 = "꿈과 의미 있는 삶이 있어"
-  const line2 = "거제지역자활센터"
+  const line1 = "꿈과 의미 있는 삶,"
+  const line2 = "거제지역 자활센터"
   const pastel = "#5CB6FF"
 
   const [d1, setD1] = useState("")
@@ -21,10 +21,9 @@ function TypingHeadline() {
   // 크기 변경 완료 여부
   const [resized, setResized] = useState(false)
 
-  // 데코레이션 타이밍
+  // 데코레이션 타이밍 (꿈 dot → 의미 wave)
   const [showDot, setShowDot] = useState(false)
   const [showWave, setShowWave] = useState(false)
-  const [showHeart, setShowHeart] = useState(false)
 
   // 1) 타이핑
   useEffect(() => {
@@ -40,7 +39,6 @@ function TypingHeadline() {
       setResized(true)
       setShowDot(true)
       setShowWave(true)
-      setShowHeart(true)
       return
     }
 
@@ -74,18 +72,16 @@ function TypingHeadline() {
     return () => clearTimeout(id)
   }, [fullyTyped, resized])
 
-  // 3) 크기 변경 후 데코 순차 등장 (꿈 dot → 의미 wave → 자활 heart)
+  // 3) 크기 변경 후 데코 순차 등장 (꿈 dot → 의미 wave)
   useEffect(() => {
     if (!resized) return
 
     const t1 = setTimeout(() => setShowDot(true), 300)
     const t2 = setTimeout(() => setShowWave(true), 800)
-    const t3 = setTimeout(() => setShowHeart(true), 1300)
 
     return () => {
       clearTimeout(t1)
       clearTimeout(t2)
-      clearTimeout(t3)
     }
   }, [resized])
 
@@ -157,7 +153,7 @@ function TypingHeadline() {
       />
     ) : null
 
-  // ----- line1 구성 (꿈과 의미 있는 삶이 있어) -----
+  // ----- line1 구성 (꿈과 의미 있는 삶,) -----
   let line1Node: React.ReactNode
 
   if (!fullyTyped) {
@@ -190,6 +186,7 @@ function TypingHeadline() {
           />
         </span>
         <span>과 </span>
+
         {/* 의미 + 물결 밑선 */}
         <span className="relative inline-block">
           의미
@@ -232,12 +229,13 @@ function TypingHeadline() {
             />
           </svg>
         </span>
-        <span> 있는 삶이 있어</span>
+
+        <span> 있는 삶,</span>
       </>
     )
   }
 
-  // ----- line2 구성 (거제지역자활센터) -----
+  // ----- line2 구성 (거제지역 자활센터) -----
   let line2Node: React.ReactNode
 
   if (!fullyTyped) {
@@ -252,46 +250,8 @@ function TypingHeadline() {
       <>
         <span className="inline-flex whitespace-nowrap">
           <span style={keywordStyle(resized)}>거제지역&nbsp;</span>
-
           <span className="inline-flex whitespace-nowrap">
-            <span className="relative inline-block" style={keywordStyle(resized)}>
-              자활
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                style={{
-                  position: "absolute",
-                  left: "50%", // 자활 가운데 기준
-                  top: "-0.6em", // 자활 바로 위
-                  transform: showHeart
-                    ? "translate(-50%, 0) scale(1)"
-                    : "translate(-50%, 22px) scale(0.8)", // 아래+작게에서 시작
-                  width: 30,
-                  height: 30,
-                  opacity: showHeart ? 1 : 0,
-                  transition:
-                    "opacity 420ms ease-out, transform 420ms cubic-bezier(0.16, 1, 0.3, 1)",
-                  pointerEvents: "none",
-                }}
-              >
-                <path
-                  d="
-                    M12 21
-                    C12 21, 4 15.5, 3 10.5
-                    C2.5 8, 3.8 6, 5.8 5.4
-                    C7.5 4.9, 9.4 5.6, 10.5 7.2
-                    L12 9.2
-                    L13.5 7.2
-                    C14.6 5.6,16.5 4.9,18.2 5.4
-                    C20.2 6,21.5 8,21 10.5
-                    C20 15.5,12 21,12 21
-                    Z
-                  "
-                  fill={pastel}
-                />
-              </svg>
-            </span>
-
+            <span style={keywordStyle(resized)}>자활</span>
             <span style={keywordStyle(resized)}>센터</span>
           </span>
         </span>
