@@ -153,7 +153,7 @@ function TypingHeadline() {
       />
     ) : null
 
-  // ----- line1 구성 (꿈과 의미 있는 삶,) -----
+  // ----- line1 구성 (꿈과 의미 있는 삶이 있어 즐거운) -----
   let line1Node: React.ReactNode
 
   if (!fullyTyped) {
@@ -230,7 +230,7 @@ function TypingHeadline() {
           </svg>
         </span>
 
-        <span> 있는 삶,</span>
+        <span> 있는 삶이 있어 즐거운</span>
       </>
     )
   }
